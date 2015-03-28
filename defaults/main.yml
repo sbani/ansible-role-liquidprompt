@@ -7,7 +7,7 @@ liquidprompt_path: /usr/local/bin/liquidprompt
 liquidprompt_repo: https://github.com/nojhan/liquidprompt.git
 
 # Enable liquidprompt to all users
-liquidprompt_enable_all_users: false
+liquidprompt_enable_all_users: true
 
 # Enable for the following users
 liquidprompt_enable_users:
