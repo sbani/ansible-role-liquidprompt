@@ -1,0 +1,19 @@
+---
+
+# Liquidprompt installation path
+liquidprompt_path: /usr/local/bin/liquidprompt
+
+# Liquidprompt repo
+liquidprompt_repo: https://github.com/nojhan/liquidprompt.git
+
+# Enable liquidprompt to all users
+liquidprompt_enable_all_users: false
+
+# Enable for the following users
+liquidprompt_enable_users:
+  - vagrant
+
+# Custom config for liquidpropt
+liquidprompt_enable_custom_variables: false
+liquidprompt_custom_variables:
+  - LP_PS1_POSTFIX="\n $ "

@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: sbani
+  description: Install and enable liquidprompt.
+  company:
+  license: MIT
+  min_ansible_version: 1.5
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+
+  categories:
+  - system

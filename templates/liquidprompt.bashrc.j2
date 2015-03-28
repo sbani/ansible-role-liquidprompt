@@ -1,0 +1,9 @@
+# Source liquidprompt
+[[ $- = *i* ]] && source {{ liquidprompt_path }}/liquidprompt
+
+{% if liquidprompt_enable_custom_variables == true %}
+# Liquidprompt variables
+    {% for variable in liquidprompt_custom_variables %}
+        {{ variable }}
+    {% endfor %}
+{% endif %}

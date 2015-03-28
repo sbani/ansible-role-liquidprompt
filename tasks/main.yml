@@ -1,0 +1,10 @@
+---
+
+- name: Clone liquidprompt
+  git: "repo=https://github.com/nojhan/liquidprompt.git dest={{ liquidprompt_path }}"
+
+- include: all-users.yml
+  when: liquidprompt_enable_all_users == true
+
+- include: specific-users.yml
+  when: liquidprompt_enable_all_users == false

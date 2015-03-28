@@ -1,0 +1,18 @@
+---
+
+# Option 2: Add liquidprompt for specific user list
+
+- name: Copy templates for users
+  template: "src=liquidprompt.bashrc.j2 dest=/home/{{ item }}/liquidprompt.bashrc owner={{ item }}"
+  with_items: liquidprompt_enable_users
+
+- name: Add source file to bashrc
+  lineinfile:
+    dest: "/home/{{ item }}/.bashrc"
+    line: "\nsource /home/{{ item }}/liquidprompt.bashrc"
+    regexp: "liquidprompt"
+    owner: "{{ item }}"
+    state: present
+    insertafter: EOF
+    create: True
+  with_items: liquidprompt_enable_users
