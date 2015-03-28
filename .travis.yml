@@ -28,6 +28,7 @@ script:
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
+
   # Make sure Ansible is installed (yes, this is contrived, since Ansible was
   # already installed via pip earlier...).
   - "which ansible"

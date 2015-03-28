@@ -8,9 +8,5 @@
 - name: Add source file to bashrc
   lineinfile:
     dest: /etc/bash.bashrc
-    line: "\nsource /etc/liquidprompt.bashrc"
-    regexp: "liquidprompt"
+    line: "source /etc/liquidprompt.bashrc"
     owner: root
-    state: present
-    insertafter: EOF
-    create: True

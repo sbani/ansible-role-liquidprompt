@@ -6,13 +6,9 @@
   template: "src=liquidprompt.bashrc.j2 dest=/home/{{ item }}/liquidprompt.bashrc owner={{ item }}"
   with_items: liquidprompt_enable_users
 
-- name: Add source file to bashrc
+- name: Add source files to bashrc files
   lineinfile:
     dest: "/home/{{ item }}/.bashrc"
     line: "\nsource /home/{{ item }}/liquidprompt.bashrc"
-    regexp: "liquidprompt"
     owner: "{{ item }}"
-    state: present
-    insertafter: EOF
-    create: True
   with_items: liquidprompt_enable_users
