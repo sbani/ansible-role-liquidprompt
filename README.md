@@ -1,15 +1,13 @@
 # Ansible Role: Liquidprompt
-
 [![Build Status](https://travis-ci.org/sbani/ansible-role-liquidprompt.svg)](https://travis-ci.org/sbani/ansible-role-liquidprompt)
 [![Galaxy](http://img.shields.io/badge/galaxy-sbani.liquidprompt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/3254)
 
-Ansible Role that installs and enables [liquidprompt](https://github.com/nojhan/liquidprompt) (lp)
-
+Ansible Role that installs and enables [liquidprompt](https://github.com/nojhan/liquidprompt) (lp).
 ## Usage
 ### Default
 The default behaviour is an activation for the *vagrant* user only without any extra configuration.
 ### Activate lp for all users
-This will update */etc/bash.bashrc*. The list *liquidprompt_apply_to_users* won't be used if *liquidprompt_apply_all_users* is true
+This will update */etc/bash.bashrc*. The list `liquidprompt_apply_to_users` won't be used if `liquidprompt_apply_all_users` is true
 ```yaml
 # Apply liquidprompt to all users
 liquidprompt_apply_all_users: true
@@ -19,7 +17,7 @@ liquidprompt_apply_all_users: true
 #  - vagrant
 ```
 ### Activate lp for specific user (list)
-This will add lp to the home of the users in list. *liquidprompt_apply_all_users* neds to be set to false.
+This will add lp to the home of the users in list. `liquidprompt_apply_all_users` neds to be set to false.
 ```yaml
 # Apply liquidprompt to all users
 liquidprompt_apply_all_users: false
@@ -31,7 +29,7 @@ liquidprompt_apply_to_users:
   - user1
 ```
 ### Add own liquidprompt config
-lp as a high number of options you can use. Please take a look in the lp repo for more informations. Here's an example:
+Lp as a high number of options you can use. Please take a look in the lp repo for more informations. Here's an example:
 ```yaml
 # Custom config for liquidpropt
 liquidprompt_enable_custom_variables = true
