@@ -1,0 +1,12 @@
+---
+
+# Option 1: Add liquidprompt to all users
+
+- name: Copy template
+  template: src=liquidprompt.bashrc.j2 dest=/etc/liquidprompt.bashrc owner=root
+
+- name: Add source file to bashrc
+  lineinfile:
+    dest: /etc/bashrc
+    line: "source /etc/liquidprompt.bashrc"
+    owner: root

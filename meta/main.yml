@@ -6,8 +6,15 @@ galaxy_info:
   license: MIT
   min_ansible_version: 1.5
   platforms:
-  - name: Ubuntu
+    - name: EL
     versions:
-    - all
+      - 6
+      - 7
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
   categories:
     - system
