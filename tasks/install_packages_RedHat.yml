@@ -1,0 +1,6 @@
+---
+- name: Install dependency packages for RedHat
+  yum: name={{ item }} state=present
+  when: ansible_pkg_mgr == 'yum'
+  with_items:
+    - git
