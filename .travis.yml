@@ -32,3 +32,12 @@ script:
   # Make sure Ansible is installed (yes, this is contrived, since Ansible was
   # already installed via pip earlier...).
   - "which ansible"
+
+  # Run the playbook for all users.
+  - 'ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo -e "liquidprompt_apply_all_users=True"'
+
+  # Ensure the liquidprompt bash file was copied system wide.
+  - >
+    [[ -f /etc/profile.d/liquidprompt.sh ]]
+    && (echo 'System wide liquidprompt test: pass' && exit 0)
+    || (echo 'System wide liquidprompt test: fail' && exit 1)
