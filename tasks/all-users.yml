@@ -1,6 +1,0 @@
----
-- include: all-users-redhat.yml
-  when: ansible_os_family == 'RedHat'
-
-- include: all-users-debian.yml
-  when: ansible_os_family == 'Debian'

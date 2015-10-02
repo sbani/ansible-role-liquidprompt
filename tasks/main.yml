@@ -8,9 +8,11 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Clone liquidprompt
-  git: "repo=https://github.com/nojhan/liquidprompt.git dest={{ liquidprompt_path }}"
+  git: "repo=https://github.com/nojhan/liquidprompt.git dest={{ liquidprompt_path }} force=yes"
 
-- include: all-users.yml
+- name: Copy template
+  template: src=liquidprompt.bashrc.j2 dest=/etc/profile.d/liquidprompt.sh owner=root
+  sudo: yes
   when: liquidprompt_enable_all_users == true
 
 - include: specific-users.yml
