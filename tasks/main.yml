@@ -1,10 +1,10 @@
 ---
 - include: install_packages_Debian.yml
-  sudo: yes
+  become: yes
   when: ansible_os_family == 'Debian'
 
 - include: install_packages_RedHat.yml
-  sudo: yes
+  become: yes
   when: ansible_os_family == 'RedHat'
 
 - name: Clone liquidprompt
