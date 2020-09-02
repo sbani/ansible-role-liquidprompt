@@ -1,6 +1,5 @@
 ---
 language: python
-python: "2.7"
 
 env:
   - SITE=test.yml
@@ -16,25 +15,25 @@ install:
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
 script:
+  # Make sure Ansible is installed (yes, this is contrived, since Ansible was
+  # already installed via pip earlier...).
+  - "ansible --version"
+
   # Check the role/playbook's syntax.
   - "ansible-playbook -i tests/inventory tests/$SITE --syntax-check"
 
   # Run the role/playbook with ansible-playbook.
-  - "ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo"
+  - "ansible-playbook -i tests/inventory tests/$SITE --connection=local --become"
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   - >
-    ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo
+    ansible-playbook -i tests/inventory tests/$SITE --connection=local --become
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 
-  # Make sure Ansible is installed (yes, this is contrived, since Ansible was
-  # already installed via pip earlier...).
-  - "which ansible"
-
   # Run the playbook for all users.
-  - 'ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo -e "liquidprompt_apply_all_users=True"'
+  - 'ansible-playbook -i tests/inventory tests/$SITE --connection=local --become -e "liquidprompt_apply_all_users=True"'
 
   # Ensure the liquidprompt bash file was copied system wide.
   - >

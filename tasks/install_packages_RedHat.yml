@@ -3,5 +3,7 @@
   vars:
     common_required_packages:
       - git
-  yum: name={{ common_required_packages }} state=present
+  yum:
+    name: "{{ common_required_packages }}"
+    state: present
   when: ansible_pkg_mgr == 'yum'
