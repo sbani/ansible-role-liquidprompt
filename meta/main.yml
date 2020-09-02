@@ -1,8 +1,9 @@
 ---
 galaxy_info:
+  role_name: liquidprompt
   author: sbani
   description: Install and enable liquidprompt.
-  version: 0.2.1
+  version: 0.3.2
   license: MIT
   min_ansible_version: 1.5
   platforms:
@@ -18,3 +19,6 @@ galaxy_info:
         - all
   categories:
     - system
+  galaxy_tags:
+    - liquidprompt
+    - bash
