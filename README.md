@@ -16,8 +16,8 @@ liquidprompt_apply_all_users: true
 #liquidprompt_apply_to_users:
 #  - vagrant
 ```
-### Activate lp for specific user (list)
-This will add lp to the home of the users in list. `liquidprompt_apply_all_users` neds to be set to false.
+### Activate lp for specific users
+This will add lp to the user's home bashrc. `liquidprompt_apply_all_users` needs to be `false`.
 ```yaml
 # Apply liquidprompt to all users
 liquidprompt_apply_all_users: false
@@ -29,7 +29,7 @@ liquidprompt_apply_to_users:
   - user1
 ```
 ### Add own liquidprompt config
-Lp as a high number of options you can use. Please take a look in the lp repo for more informations. Here's an example:
+Lp has a vast amount of options. Please conduct their repo for further information. Here's an example:
 ```yaml
 # Custom config for liquidpropt
 liquidprompt_enable_custom_variables = true
@@ -42,6 +42,6 @@ MIT
 ## Credits
 Specials thanks goes to all liquidprompt contributors and the maintainers/original authors.
 ## Contribution / Discussion / Missing features
-Contributors and patches are welcome! Open discussions about the defaults or other features you would like to have.
+Contributors and patches are welcome! Open discussions about the defaults or other features you like to have.
 ## Author Information
 Sufijen Bani (http://www.sbani.net)
