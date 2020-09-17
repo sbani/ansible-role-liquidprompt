@@ -40,3 +40,6 @@ script:
     [[ -f /etc/profile.d/liquidprompt.sh ]]
     && (echo 'System wide liquidprompt test: pass' && exit 0)
     || (echo 'System wide liquidprompt test: fail' && exit 1)
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
