@@ -1,5 +1,5 @@
 # Ansible Role: Liquidprompt
-[![Build Status](https://travis-ci.org/sbani/ansible-role-liquidprompt.svg)](https://travis-ci.org/sbani/ansible-role-liquidprompt)
+[![Build Status](https://travis-ci.org/sbani/liquidprompt.svg?branch=master)](https://travis-ci.org/sbani/liquidprompt)
 [![Galaxy](http://img.shields.io/badge/galaxy-sbani.liquidprompt-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/3254)
 
 Ansible Role that installs and enables [liquidprompt](https://github.com/nojhan/liquidprompt) (lp).
