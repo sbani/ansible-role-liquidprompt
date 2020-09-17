@@ -17,8 +17,6 @@ galaxy_info:
     - name: Debian
       versions:
         - all
-  categories:
-    - system
   galaxy_tags:
     - liquidprompt
     - bash

@@ -19,7 +19,7 @@
     dest: /etc/profile.d/liquidprompt.sh
     owner: root
   become: yes
-  when: liquidprompt_enable_all_users == true
+  when: liquidprompt_enable_all_users
 
 - include: specific-users.yml
-  when: liquidprompt_enable_all_users == false
+  when: not liquidprompt_enable_all_users
